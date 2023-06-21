@@ -11,16 +11,16 @@ reader.on('line', (line) => {
   lines.push(line);
 });
 reader.on('close', () => {
-    const [H, W] = lines[0].split(" ").map((n) => parseInt(n));
+    const [H, W] = lines[0].split(' ').map(n => parseInt(n));
     let data = [];
     for (let i = 0; i < H; i++) {
-      data.push(lines[i + 1].split(""));
+      data.push(lines[i + 1].split(''));
     }
-    const [y, x] = lines[H + 1].split(" ").map((n) => parseInt(n));
+    const [y, x] = lines[H + 1].split(' ').map(n => parseInt(n));
 
     const update_data = (y, x) => {
       if (y >= 0 && y < H && x >= 0 && x < W) {
-        data[y][x] = data[y][x] == "." ? "#" : ".";
+        data[y][x] = data[y][x] == '.' ? '#' : '.';
       }
     };
     const patterns = [[y, x]];
@@ -50,6 +50,6 @@ reader.on('close', () => {
     }
 
     for (let i = 0; i < H; i++) {
-      console.log(data[i].join(""));
+      console.log(data[i].join(''));
     }
 });

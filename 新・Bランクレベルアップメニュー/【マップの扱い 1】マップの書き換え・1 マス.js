@@ -11,7 +11,7 @@ reader.on('line', (line) => {
   lines.push(line);
 });
 reader.on('close', () => {
-    const [H,W] = lines[0].split(" ").map((n) => parseInt(n));
+    const [H,W] = lines[0].split(' ').map(n => parseInt(n));
     let data = [];
     for ( let i = 0; i < H; i++) {
         data.push(lines[i+1].split(''));
